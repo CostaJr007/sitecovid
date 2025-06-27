@@ -1,0 +1,180 @@
+<script type="text/javascript">
+        var gk_isXlsx = false;
+        var gk_xlsxFileLookup = {};
+        var gk_fileData = {};
+        function filledCell(cell) {
+          return cell !== '' && cell != null;
+        }
+        function loadFileData(filename) {
+        if (gk_isXlsx && gk_xlsxFileLookup[filename]) {
+            try {
+                var workbook = XLSX.read(gk_fileData[filename], { type: 'base64' });
+                var firstSheetName = workbook.SheetNames[0];
+                var worksheet = workbook.Sheets[firstSheetName];
+
+                // Convert sheet to JSON to filter blank rows
+                var jsonData = XLSX.utils.sheet_to_json(worksheet, { header: 1, blankrows: false, defval: '' });
+                // Filter out blank rows (rows where all cells are empty, null, or undefined)
+                var filteredData = jsonData.filter(row => row.some(filledCell));
+
+                // Heuristic to find the header row by ignoring rows with fewer filled cells than the next row
+                var headerRowIndex = filteredData.findIndex((row, index) =>
+                  row.filter(filledCell).length >= filteredData[index + 1]?.filter(filledCell).length
+                );
+                // Fallback
+                if (headerRowIndex === -1 || headerRowIndex > 25) {
+                  headerRowIndex = 0;
+                }
+
+                // Convert filtered JSON back to CSV
+                var csv = XLSX.utils.aoa_to_sheet(filteredData.slice(headerRowIndex)); // Create a new sheet from filtered array of arrays
+                csv = XLSX.utils.sheet_to_csv(csv, { header: 1 });
+                return csv;
+            } catch (e) {
+                console.error(e);
+                return "";
+            }
+        }
+        return gk_fileData[filename] || "";
+        }
+        </script><!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Detox natural para eliminar resíduos da proteína spike e recuperar sua saúde pós-COVID-19.">
+    <title>Detox para Proteína Spike - Recupere Sua Saúde</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+        header {
+            background-color: #2e7d32;
+            color: white;
+            text-align: center;
+            padding: 50px 20px;
+        }
+        h1 {
+            font-size: 2.5em;
+            margin: 0;
+        }
+        h2 {
+            font-size: 1.8em;
+            color: #2e7d32;
+        }
+        section {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        .cta-button {
+            display: inline-block;
+            background-color: #ff6f00;
+            color: white;
+            padding: 15px 30px;
+            text-decoration: none;
+            border-radius: 5px;
+            font-size: 1.2em;
+            margin: 20px 0;
+            transition: background-color 0.3s;
+        }
+        .cta-button:hover {
+            background-color: #e65100;
+        }
+        ul {
+            list-style-type: disc;
+            padding-left: 20px;
+        }
+        .testimonials {
+            background-color: #e8f5e9;
+            padding: 20px;
+            border-radius: 8px;
+        }
+        footer {
+            text-align: center;
+            padding: 20px;
+            background-color: #2e7d32;
+            color: white;
+            margin-top: 20px;
+        }
+        @media (max-width: 600px) {
+            h1 {
+                font-size: 1.8em;
+            }
+            h2 {
+                font-size: 1.5em;
+            }
+            section {
+                margin: 10px;
+                padding: 15px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Liberte-se dos Efeitos Persistentes da COVID-19</h1>
+        <p>Recupere sua energia, clareza mental e bem-estar com nosso protocolo natural para eliminar resíduos da proteína spike.</p>
+        <a href="#comprar" class="cta-button">Compre Agora e Sinta a Diferença em 7 Dias!</a>
+    </header>
+
+    <section id="problema">
+        <h2>Você Está Sofrendo com os Efeitos Prolongados da COVID-19?</h2>
+        <p>Você já se sentiu exausto sem motivo aparente? Ou talvez tenha notado que sua mente não está tão clara quanto antes? Esses são sinais de que seu corpo pode estar lutando contra resíduos da proteína spike, uma herança silenciosa da COVID-19. Milhões de pessoas estão enfrentando esses desafios: fadiga constante, neblina mental, dores musculares e uma sensação de que algo não está certo. Se você está cansado de se sentir assim, saiba que não está sozinho — e que há uma solução.</p>
+    </section>
+
+    <section id="solucao">
+        <h2>A Solução: Detox para Proteína Spike</h2>
+        <p>Nosso <strong>Detox para Proteína Spike</strong> é um protocolo natural projetado para ajudar seu corpo a se livrar desses resíduos indesejados. Com uma combinação única de <strong>Nattokinase</strong>, <strong>Bromelina</strong> e <strong>Curcumina</strong>, ele trabalha para dissolver coágulos, reduzir inflamação e restaurar sua vitalidade. É a chave para recuperar sua saúde e bem-estar, de forma segura e eficaz.</p>
+    </section>
+
+    <section id="beneficios">
+        <h2>Benefícios que Você Pode Sentir</h2>
+        <p>Imagine acordar com mais energia, pensar com clareza e se sentir livre das dores que o incomodam. Com nosso detox, você pode:</p>
+        <ul>
+            <li><strong>Sinta-se mais energizado</strong> e pronto para enfrentar o dia.</li>
+            <li><strong>Recupere a clareza mental</strong> e o foco que você tinha antes.</li>
+            <li><strong>Diga adeus às dores musculares</strong> e à fadiga constante.</li>
+            <li><strong>Fortaleça seu sistema imunológico</strong> naturalmente.</li>
+        </ul>
+        <p>Esses não são apenas promessas — são resultados reais que nossos clientes estão experimentando.</p>
+    </section>
+
+    <section id="depoimentos" class="testimonials">
+        <h2>O Que Nossos Clientes Estão Dizendo</h2>
+        <p>"Depois de usar o detox, minha energia voltou e me sinto muito melhor!" – Ana, 35 anos.</p>
+        <p>"Eu estava cético, mas os resultados falam por si. Recomendo a todos!" – João, 38 anos.</p>
+        <p>"Minha recuperação pós-COVID foi muito mais rápida com este protocolo. Sinto-me como eu mesma novamente." – Maria, 50 anos.</p>
+    </section>
+
+    <section id="ciencia">
+        <h2>Segurança e Ciência por Trás do Detox</h2>
+        <p>Nosso protocolo é baseado em pesquisas clínicas e pré-clínicas que demonstram a eficácia dos ingredientes em apoiar a desintoxicação e a recuperação. É seguro, natural e endossado por especialistas como o Dr. Peter McCullough. Você pode confiar que está fazendo a escolha certa para sua saúde.</p>
+    </section>
+
+    <section id="faq">
+        <h2>Perguntas Frequentes</h2>
+        <p><strong>Posso tomar o detox mesmo sem ter tido COVID-19?</strong><br>Sim! Nosso detox é um excelente antioxidante e pode ser usado por qualquer pessoa que queira apoiar sua saúde geral.</p>
+        <p><strong>Quanto tempo devo usar o protocolo?</strong><br>Recomendamos pelo menos 90 dias para resultados ótimos, mas você pode ajustar conforme sua necessidade ou orientação médica.</p>
+        <p><strong>É seguro para todos?</strong><br>Nosso protocolo é natural e seguro para a maioria das pessoas. No entanto, gestantes, lactantes e pessoas com condições médicas específicas devem consultar um médico antes de usar.</p>
+    </section>
+
+    <section id="comprar">
+        <h2>Comece Sua Jornada de Recuperação Hoje!</h2>
+        <p>Não espere mais para recuperar sua saúde. <strong>Comece sua jornada de bem-estar agora</strong> e sinta a diferença em apenas 7 dias. Compre agora e receba um guia exclusivo de bem-estar!</p>
+        <a href="#comprar" class="cta-button">Compre Agora</a>
+        <p><strong>Garantia de Satisfação ou Seu Dinheiro de Volta!</strong> Sua saúde é nossa prioridade. Se não ficar satisfeito, devolvemos seu dinheiro.</p>
+    </section>
+
+    <footer>
+        <p>Se tiver dúvidas, nossa equipe está pronta para ajudar. Entre em contato conosco em <a href="mailto:contato@exemplo.com">contato@exemplo.com</a>.</p>
+    </footer>
+</body>
+</html>
