@@ -1,146 +1,265 @@
-<!DOCTYPE html>
-<html lang="pt-br">
-<head>
-    <meta charset="utf-8">
-    <title>Spike Detox - QUIZ</title>
-    <meta content="width=device-width, initial-scale=1.0" name="viewport">
-    <meta content="quiz, detox, spike, covid" name="keywords">
-    <meta content="Responda a este quiz para identificar efeitos colaterais da proteína Spike." name="description">
+/* --- ESTILOS GERAIS E FONTES --- */
+body {
+    background-color: black;
+    font-family: 'Nunito', sans-serif;
+    margin: 0;
+}
 
-    <link href="assets/img/icon.png" rel="icon" />
-    <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@800&family=Nunito:wght@300;400;700;800&display=swap" rel="stylesheet">
+h1, h2, h3, h5, h6 {
+    color: #005bab;
+    font-weight: 700;
+}
 
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"/>
-    
-    <link href="assets/css/quiz.css" rel="stylesheet" />
-</head>
+/* --- CABEÇALHO E RODAPÉ --- */
+header, footer {
+    background-color: black;
+    padding: 20px 0;
+}
 
-<body>
+header h1 {
+    font-size: clamp(1.5rem, 5vw, 2.5rem); /* Fonte fluida */
+    line-height: 1.2;
+    font-weight: 800;
+}
 
-<header>
-    <div class="container text-center">
-        <h1 id="headertitle">
-            <span class="header-text-white">Responda a este quiz para identificar se você tem algum efeito colateral da proteína Spike da </span>
-            <span class="header-text-red">VACINA do COVID-19</span>
-        </h1>
-    </div>
-</header>
+.header-text-white { color: white; }
+.header-text-red { color: red; }
 
-<main id="mainQuiz">
-    <section class="separrow">
-        <img src="assets/img/arrowdown2.png" alt="Seta para baixo" />
-    </section>
 
-    <section class="quiz">
-        <div class="content-container">
-            <div class="resultonly" style="display:none;">
-                <h2 id="result_ponit2">Seu cérebro se parece com o da esquerda...</h2>
-            </div>
+/* --- LAYOUT PRINCIPAL E FUNDO --- */
+#mainQuiz {
+    padding-bottom: 8px;
+    background: url("../img/fundo3.png") #fff top center no-repeat;
+    background-size: cover;
+}
 
-            <div class="quiznum">
-                <ul>
-                    <li class="qactive">1</li><li>2</li><li>3</li><li>4</li><li>5</li>
-                </ul>
-            </div>
-            <div class="quiznummob">
-                <h3><span class="quiznumber">1</span>/<span>5</span></h3>
-            </div>
+.content-container {
+    width: 95%; /* Fluido */
+    max-width: 960px; /* Largura máxima em telas grandes */
+    margin: 0 auto;
+    text-align: center;
+}
 
-            <div class="qwrap">
-                <div class="qs quest1">
-                    <div class="qimg">
-                        <img src="assets/img/dose.png" alt="Doses de vacina"/>
-                    </div>
-                    <div class="question">
-                        <h3>Quantas doses da Vacina você tomou?</h3>
-                        <ul class="qoptions">
-                            <li data-points="2"><div class="qcir"><i class="fa fa-check"></i></div><span>Uma</span></li>
-                            <li data-points="1"><div class="qcir"><i class="fa fa-check"></i></div><span>Duas</span></li>
-                            <li data-points="0"><div class="qcir"><i class="fa fa-check"></i></div><span>Três ou mais</span></li>
-                        </ul>
-                    </div>
-                </div>
+.separrow {
+    min-height: 60px;
+    text-align: center;
+}
+.separrow img {
+    margin-top: -1px;
+}
 
-                <div class="qs quest2">
-                    <div class="qimg">
-                        <img src="assets/img/Esqueci.png" alt="Pessoa com dificuldade de concentração"/>
-                    </div>
-                    <div class="question">
-                        <h3>Ultimamente tem esquecido das coisas ou dificuldade de concentração?</h3>
-                        <ul class="qoptions">
-                            <li data-points="2"><div class="qcir"><i class="fa fa-check"></i></div><span>Várias vezes</span></li>
-                            <li data-points="1"><div class="qcir"><i class="fa fa-check"></i></div><span>Algumas vezes</span></li>
-                            <li data-points="0"><div class="qcir"><i class="fa fa-check"></i></div><span>Poucas Vezes</span></li>
-                        </ul>
-                    </div>
-                </div>
 
-                <div class="qs quest3">
-                    <div class="qimg">
-                        <img src="assets/img/dor.png" alt="Dor nas articulações"/>
-                    </div>
-                    <div class="question">
-                        <h3>Você tem dores nas articulações?</h3>
-                        <ul class="qoptions">
-                            <li data-points="2"><div class="qcir"><i class="fa fa-check"></i></div><span>Sim</span></li>
-                            <li data-points="0"><div class="qcir"><i class="fa fa-check"></i></div><span>Não</span></li>
-                        </ul>
-                    </div>
-                </div>
-                
-                <div class="qs quest4">
-                    <div class="qimg">
-                        <img src="assets/img/cansado.png" alt="Pessoa cansada"/>
-                    </div>
-                    <div class="question">
-                        <h3>Tem se sentido cansado e indisposto ultimamente?</h3>
-                        <ul class="qoptions">
-                            <li data-points="2"><div class="qcir"><i class="fa fa-check"></i></div><span>Sim</span></li>
-                            <li data-points="0"><div class="qcir"><i class="fa fa-check"></i></div><span>Não</span></li>
-                        </ul>
-                    </div>
-                </div>
+/* --- ESTRUTURA DO QUIZ --- */
+.quiz {
+    min-height: 450px;
+}
 
-                <div class="qs quest5">
-                    <div class="qimg">
-                        <img src="assets/img/peito.png" alt="Coração humano"/>
-                    </div>
-                    <div class="question">
-                        <h3>Sente dores no peito ou coração acelerado?</h3>
-                        <ul class="qoptions">
-                            <li data-points="2"><div class="qcir"><i class="fa fa-check"></i></div><span>Sim, frequentemente</span></li>
-                            <li data-points="1"><div class="qcir"><i class="fa fa-check"></i></div><span>Às vezes</span></li>
-                            <li data-points="0"><div class="qcir"><i class="fa fa-check"></i></div><span>Raramente</span></li>
-                        </ul>
-                    </div>
-                </div>
+.qwrap {
+    margin: 10px auto; /* Centraliza o card */
+    background: url("../img/questionbg.png") #FFF top left no-repeat;
+    background-size: cover;
+    position: relative;
+    padding: 30px 20px 40px;
+    box-shadow: 1px 1px 12px 0px rgba(47, 68, 118, 0.53);
+    margin-bottom: 30px;
+    border-radius: 20px;
+    border: 6px solid #eee;
+    text-align: left;
+}
 
-                <div class="qs result">
-                    <h3 id="result_ponit3">De acordo com as respostas possivelmente essa é a condição do seu cérebro atualmente...</h3>
-                    <p><img src="assets/img/cerebro.png" alt="Comparação de cérebros"></p>
-                    <div id="result_ponit4" class="rescontent-res"></div>
-                </div>
-            </div>
-            
-            <div class="resultbtn">
-                <a class="btn-watch" href="https://spikedetox.life" target="_blank">ACESSAR PÁGINA &raquo;</a>
-            </div>
-        </div>
-    </section>
-</main>
 
-<footer>
-    <div class="content-container">
-        <span>&nbsp;</span>
-    </div>
-</footer>
+/* --- LAYOUT INTERNO DA PERGUNTA (FLEXBOX) --- */
+.qs {
+    display: none; /* Esconde todas por padrão */
+    align-items: center;
+    gap: 20px; /* Espaçamento entre imagem e texto */
+    flex-direction: column; /* Padrão: empilhado (mobile-first) */
+}
 
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-<script src="assets/js/quiz.js"></script>
+.qs.quest1 {
+    display: flex; /* Mostra a primeira pergunta */
+}
 
-</body>
-</html>
+.qimg {
+    flex-shrink: 0; /* Evita que a imagem encolha */
+    width: 100%;
+    max-width: 250px; /* Limita o tamanho da imagem */
+    text-align: center;
+}
+
+.qimg img {
+    max-width: 100%;
+    height: auto; /* Garante que a imagem seja responsiva */
+}
+
+.question {
+    width: 100%;
+}
+
+.question h3 {
+    font-weight: 700;
+    font-size: clamp(1.2rem, 4vw, 1.6rem);
+    line-height: 1.2;
+}
+
+
+/* --- OPÇÕES DE RESPOSTA --- */
+.qoptions {
+    margin-top: 20px;
+    padding-left: 0;
+}
+
+.qoptions li {
+    position: relative;
+    margin-bottom: 15px;
+    cursor: pointer;
+    list-style: none;
+    display: flex;
+    align-items: center;
+}
+
+.qoptions li span {
+    font-size: clamp(1.1rem, 3.5vw, 1.4rem);
+}
+
+.qcir {
+    height: 25px;
+    width: 25px;
+    min-width: 25px;
+    border: 2px solid #0a8bff;
+    border-radius: 50%;
+    margin-right: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #FFF;
+    transition: background-color 0.3s ease;
+}
+
+.qcir.active { background: #0a8bff; }
+.qcir .fa-check { display: none; }
+.qcir.active .fa-check { display: block; }
+
+
+/* --- NUMERAÇÃO --- */
+.quiznum {
+    margin: -6px auto 14px;
+}
+
+.quiznum ul {
+    padding: 12px 20px;
+    box-shadow: 0 0 10px #4d6f8d61;
+    border-radius: 6px;
+    background-color: #ffffff75;
+    list-style: none;
+    margin: 0;
+}
+
+.quiznum ul li {
+    text-align: center;
+    padding-top: 4px;
+    height: 30px;
+    width: 30px;
+    font-size: 15px;
+    border-radius: 16px;
+    display: inline-block;
+    background: #dadada;
+    margin: 0 5px;
+}
+.qactive { background:#0086ff !important; color:#FFF; }
+
+
+/* --- RESULTADOS --- */
+.resultonly h2 {
+    font-size: clamp(1.5rem, 5vw, 2rem);
+    line-height: 1.1;
+    font-weight: 600;
+    color: #000;
+    margin: 0 0 -16px;
+}
+
+.result h3 {
+    font-size: clamp(1.2rem, 4vw, 1.5rem);
+    font-weight: 500;
+    margin-bottom: 20px;
+    line-height: 1.2;
+}
+.result p img {
+    width: 100%;
+    max-width: 600px; /* Limita o tamanho da imagem do cérebro */
+    height: auto;
+}
+
+.rescontent-res p {
+    font-size: clamp(1rem, 3vw, 1.2rem);
+    line-height: 1.4;
+    text-align: left;
+    color: #315077;
+}
+
+.rescontent-res p b, .rescontent-res p strong {
+    font-weight: 800;
+    color: #5785de;
+}
+
+.rescontent-res p em {
+    color: red;
+    font-weight: 800;
+}
+
+.resultbtn { display:none; margin-bottom: 40px; }
+
+.resultbtn .btn-watch {
+    display: inline-block;
+    background: #e83434;
+    width: 100%;
+    max-width: 300px;
+    margin: 0 auto;
+    padding: 20px;
+    font-size: clamp(1.2rem, 4vw, 1.5rem);
+    color: #fff;
+    font-weight: bold;
+    border-radius: 15px;
+    box-shadow: 1px 1px 12px 0px rgba(0,0,0,0.53);
+    border: 1px solid #c11717;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.resultbtn .btn-watch:hover {
+    background-color: #c11111;
+    color: #fff;
+    text-decoration: none !important;
+}
+
+
+/* --- MEDIA QUERIES PARA RESPONSIVIDADE --- */
+.quiznummob { display: none; }
+
+/* Estilos para telas de tablet e maiores */
+@media screen and (min-width: 768px) {
+    .qs {
+        flex-direction: row; /* Lado a lado em telas maiores */
+    }
+    .question {
+        text-align: left; /* Alinha texto à esquerda em telas maiores */
+    }
+}
+
+/* Estilos para telas de celular */
+@media screen and (max-width: 767px) {
+    .quiznum { display: none; }
+    .quiznummob {
+        display: block;
+        padding: 10px 0px;
+        background: #fff;
+        margin: 20px 0px;
+        font-size: 24px;
+        font-weight: bold;
+        border-radius: 15px;
+        box-shadow: 1px 1px 12px 0px rgba(0,0,0,0.53);
+    }
+    .question h3 {
+        text-align: center;
+    }
+}
