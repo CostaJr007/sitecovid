@@ -1,813 +1,93 @@
-header {
-
-padding:0px;
-
-background-color: black;
-
-
-
-}
-
-article, aside, figcaption, figure, footer, header, hgroup, main, nav, section {
-
-    display: block;
-
-    font-family: Nunito, sans-serif;
-
-}
-
-#mainQuiz {
-
-    height: 100%;
-
-    padding-bottom: 8px;
-
-    min-height: 580px;
-
-
-
-    background: url("../img/fundo3.png") #fff top center no-repeat;
-
-
-
-}
-
-
-
-.content {
-
-width:960px;
-
-margin:0 auto;
-
-padding:10px 0;
-
-    text-align: center;
-
-}
-
-.content h1, h1 {
-
-    font-size: 3rem;
-
-    line-height: 1.1;
-
-    font-weight: 800;
-
-    letter-spacing: -0.5px;
-
-}
-
-
-
-b {
-
-font-weight:bold;
-
-}
-
-
-
-i {
-
-font-style:italic;
-
-}
-
-
-
-h1,h2,h3,h5,h6 {
-
-color:#005bab;
-
-}
-
-
-
-.deskonly {
-
-display:block;
-
-}
-
-
-
-h2 {
-
-font-size:40px;
-
-line-height:50px;
-
-text-align:center;
-
-padding:20px 0px;
-
-}
-
-h4 {
-
-font-size:20px;
-
-margin-bo
-
-}
-
-
-
-.rescontent p b {
-
-    font-weight: 800;
-
-    color: #5785de;
-
-}
-
-.rescontent p em {
-
-    color: red;
-
-    font-weight: 800;
-
-}
-
-.rescontent-res p {
-
-    font-size: 1.3rem !important;
-
-    line-height: 1.2;
-
-    margin: 0 6% !important;
-
-    text-align: left;
-
-    padding: 5px;
-
-    color: #315077;
-
-}
-
-
-
-.quiz {
-
-    background-repeat: no-repeat;
-
-    justify-content: center;
-
-    align-items: center;
-
-    display: flex;
-
-    text-align: center;
-
-    min-height: 450px;
-
-}
-
-
-
-.quiznum {
-
-/* background:#FFF; */
-
-padding:0px;
-
--webkit-border-radius: 10px;
-
--moz-border-radius: 10px;
-
-border-radius: 10px;
-
-display:inline-block;
-
-margin:-6px auto 14px;
-
-}
-
-
-
-.quiznum ul {
-
-padding: 12px 34px 12px;
-
-box-shadow: 0 0 10px #4d6f8d61;
-
-border-radius: 6px;
-
-background-color: #ffffff75;
-
-}
-
-
-
-.quiznum ul li {
-
-text-align: center;
-
-padding: 4px;
-
-height: 30px;
-
-width: 30px;
-
-font-size: 15px;
-
--webkit-border-radius: 10px;
-
--moz-border-radius: 10px;
-
-border-radius: 16px;
-
-display: inline-block;
-
-background: #dadada;
-
-margin-left: 10px;
-
-}
-
-.quiznum ul li:nth-child(1) {
-
-margin-left:0px;
-
-}
-
-
-
-.qactive {
-
-background:#0086ff !important;
-
-color:#FFF;
-
-}
-
-
-
-.separrow {
-
-min-height:60px;
-
-/* background:url("../img/star-bg.jpg") #f2f3f5 top center no-repeat; */
-
-    text-align: center;
-
-}
-
-
-
-.qwrap {
-
-margin:10px;
-
-background:url("../img/questionbg.png") #FFF top left no-repeat;
-
-position:relative;
-
-padding:30px 20px 40px;
-
-box-shadow: 1px 1px 12px 0px rgba(47, 68, 118, 0.53);
-
-margin-bottom: 30px;
-
-border-radius: 20px;
-
-border: 6px solid #eee;
-
-}
-
-
-
-.qwrap .question h3{
-
-font-weight: 400;
-
-font-size: 1.6rem;
-
-line-height: 1;
-
-}
-
-.qwrap .question {
-
-float: left;
-
-text-align: left;
-
-max-width: 520px;
-
-margin-left: 22px;
-
-margin-top: 5%;
-
-}
-
-
-
-.qoptions {
-
-margin:15px -10px 0 -20px;
-
-}
-
-
-
-.qnum {
-
-position:absolute;
-
-top:10px;
-
-left:10px;
-
-color:#FFF;
-
-}
-
-
-
-.qimg {
-
-float:left;
-
-width:250px;
-
-}
-
-
-
-.qimg img {
-
-max-width: 230px;
-
-}
-
-
-
-.qcir {
-
-height:25px;
-
-width:25px;
-
-border:1px solid #0a8bff;
-
--webkit-border-radius: 15px;
-
--moz-border-radius: 15px;
-
-border-radius: 15px;
-
-position:absolute;
-
-top:-2px;
-
-left:5px;
-
-color:#FFF;
-
-}
-
-.resultonly h2 {
-
-font-size: 2rem !important;
-
-line-height: 1;
-
-font-weight: 600;
-
-color: #000;
-
-margin: 0 0 -16px;
-
-}
-
-.resultonly {
-
-    margin-bottom: 40px;
-
-}
-
-
-
-.qoptions {
-
-margin-top:20px;
-
-}
-
-.qoptions li i{
-
-margin: 5px;
-
-}
-
-.qoptions li {
-
-position:relative;
-
-margin-bottom:25px;
-
-cursor:pointer;
-
-    list-style: none;
-
-}
-
-.qoptions li span {
-
-display: inline-block;
-
-padding: 0 6px;
-
-margin-left: 40px;
-
-font-size: 1.4rem;
-
-line-height: 1;
-
-}
-
-
-
-.active {
-
-background:#0a8bff;
-
-}
-
-
-
-.clear { clear:both; }
-
-
-
-.qcontrol {
-
-position:absolute;
-
-bottom:-20px;
-
-left:50%;
-
-    margin-left: -30px;
-
-}
-
-
-
-.qleft {
-
-display:inline-block;
-
-}
-
-
-
-.qright {
-
-display:inline-block;
-
-}
-
-
-
-/* email form */
-
-.frm-pnl {
-
-    text-align: center;
-
-    font-size: 1.3rem;
-
-}
-
-.frm-pnl input {
-
-    width: 360px;
-
-    padding: 3px 0 3px 6px;
-
-    margin-left: 8px;
-
-}
-
-.signupbtn {
-
-    background-color: red;
-
-    padding: 14px 40px;
-
-    border: 0;
-
-    border-radius: 8px;
-
-    box-shadow: 1px 1px 5px #000;
-
-    font-size: 1.6rem;
-
-    text-transform: uppercase;
-
-    font-weight: 600;
-
-    color: #fff;
-
-    cursor: pointer !important;
-
-    margin-top: 16px;
-
-}
-
-.signupbtn:hover {
-
-    background-color: #bf0606;
-
-}
-
-
-
-
-
-
-
-.footer {
-
-min-height:154px;
-
-text-align:center;
-
-padding:30px 0px;
-
-    background-image: url(../img/harvard.png);
-
-background-color: black;
-
-    margin-top: -20px;
-
-}
-
-
-
-.footer ul{
-
-display:block;
-
-width:38%;
-
-margin:16px auto;
-
-color:#FFF;
-
-}
-
-.footer ul li{
-
-display:inline-block;
-
-margin-left:20px;
-
-color:#FFF;
-
-}
-
-
-
-.footer ul li:nth-child(1){
-
-margin-left:-40px;
-
-}
-
-
-
-.footer span{
-
-color:#FFF;
-
-display:block;
-
-font-size:12px;
-
-margin-top:20px;
-
-}
-
-
-
-
-
-.other {
-
-width:100%;
-
-margin-top:20px;
-
-}
-
-
-
-.other p {
-
-display:block;
-
-margin-bottom:20px;
-
-font-size:14px;
-
-line-height:18px;
-
-text-align:center;
-
-}
-
-
-
-.qs {
-
-display:none;
-
-}
-
-
-
-.quest1 {
-
-display:block;
-
-}
-
-.result h3{
-
-font-size: 26px;
-
-    font-weight: 500;
-
-    margin-bottom: 20px;
-
-    line-height: 1;
-
-padding: 20px 9%;
-
-}
-
-
-
-.result p {
-
-    text-align: left;
-
-    font-size: 1.3rem;
-
-    margin: 26px 4%;
-
-}
-
-.quiznummob,.resultbtn {
-
-display:none;
-
-}
-
-
-
-.resultbtn {
-
-margin-bottom:40px;
-
-}
-
-
-
-.resultbtn .btn {
-
-background: #e83434;
-
-    width: 300px;
-
-    margin: 0 auto;
-
-    padding: 20px;
-
-    font-size: 22px;
-
-    color: #fff;
-
-    font-weight: bold;
-
-    -webkit-border-radius: 15px;
-
-    -moz-border-radius: 15px;
-
-    border-radius: 15px;
-
-    -webkit-box-shadow: 1px 1px 12px 0px rgba(0,0,0,0.53);
-
-    -moz-box-shadow: 1px 1px 12px 0px rgba(0,0,0,0.53);
-
-    box-shadow: 1px 1px 12px 0px rgba(0,0,0,0.53);
-
-    border: 1px solid #c11717;
-
-cursor:pointer;
-
-}
-
-.resultbtn .btn:hover {
-
-    background-color: #c11111;
-
-    text-decoration: none !important;
-
-}
-
-.btn-watch:hover {
-
-    text-decoration: none !important;
-
-}
-
-
-
-@media screen and (max-width: 815px) {
-
-h1 {
-
-width:100%;
-
-font-size:35px;
-
-line-height:38px;
-
-}
-
-h2 {
-
-font-size:30px;
-
-line-height:34px;
-
-}
-
-.deskonly {
-
-display:none;
-
-}
-
-.content {
-
-width:95%;
-
-margin: 0 auto;
-
-}
-
-.quiznum {
-
-display:none;
-
-}
-
-.quiznummob {
-
-display:block;
-
-padding: 10px 0px;
-
-background: #fff;
-
-margin: 20px 0px;
-
-font-size: 30px;
-
-font-weight: bold;
-
--webkit-border-radius: 15px;
-
--moz-border-radius: 15px;
-
-border-radius: 15px;
-
--webkit-box-shadow: 1px 1px 12px 0px rgba(0,0,0,0.53);
-
--moz-box-shadow: 1px 1px 12px 0px rgba(0,0,0,0.53);
-
-box-shadow: 1px 1px 12px 0px rgba(0,0,0,0.53);
-
-}
-
-nav .content ul {
-
-display:none;
-
-}
-
-.footer ul {
-
-width:100%;
-
-}
-
-
-
-}
+$(document).ready(function() {
+    // --- CONFIGURAÇÃO INICIAL DO QUIZ ---
+    console.log("Gauss_QUIZ: Script iniciado.");
+
+    var currentQuestionIndex = 1;
+    var totalPoints = 0;
+    var totalQuestions = $(".qs").not(".result").length;
+
+    console.log("Gauss_QUIZ: Total de " + totalQuestions + " perguntas encontradas.");
+
+    $(".qs").hide();
+    $(".quest1").show();
+    $(".resultbtn").hide();
+
+    // --- MANIPULADOR DE CLIQUE GERAL PARA AS OPÇÕES ---
+    $(".qoptions li").on("click", function() {
+
+        var $selectedOption = $(this);
+        var $currentQuestion = $(".quest" + currentQuestionIndex);
+
+        if ($currentQuestion.is(':animated')) {
+            return;
+        }
+
+        var points = parseInt($selectedOption.attr("data-points")) || 0;
+        totalPoints += points;
+        console.log("Gauss_QUIZ: Pergunta " + currentQuestionIndex + " | Pontos ganhos: " + points + " | Total: " + totalPoints);
+
+        $currentQuestion.find(".qcir").removeClass("active");
+        $selectedOption.find(".qcir").addClass("active");
+
+        setTimeout(function() {
+            $currentQuestion.fadeOut(400, function() {
+
+                currentQuestionIndex++;
+
+                if (currentQuestionIndex <= totalQuestions) {
+                    $(".quest" + currentQuestionIndex).fadeIn(400);
+                    $(".quiznumber").html(currentQuestionIndex);
+                    $(".quiznum li").removeClass("qactive");
+                    $(".quiznum li:nth-child(" + currentQuestionIndex + ")").addClass("qactive");
+                } else {
+                    displayResults();
+                }
+            });
+        }, 250);
+    });
+
+    /**
+     * Função final para calcular e exibir os resultados do quiz.
+     */
+    function displayResults() {
+        console.log("Gauss_QUIZ: Fim do quiz. Exibindo resultados com " + totalPoints + " pontos.");
+
+        var headerText = "";
+
+        // Define o texto principal com base na pontuação
+        if (totalPoints > 4) { // Ajuste o valor 4 se necessário
+
+            // ===================================================================
+            // ALTERAÇÃO AQUI: Adicionado <span style='color: white;'> ao texto
+            // ===================================================================
+            headerText = "<span style='color: white;'>Oh! Aparentemente você tem fortes indícios de intoxicação com a proteína spike da </span><span style='color: red;'>VACINA</span>";
+
+        } else {
+            // Para pontuações mais baixas, também garantimos o texto branco.
+            headerText = "<span style='color: white;'>Seu resultado indica um menor risco de efeitos colaterais da proteína spike.</span>";
+        }
+
+        $("#headertitle").html(headerText);
+
+        var resultText3 = "De acordo com as respostas, possivelmente essa é a condição do seu cérebro atualmente...";
+
+        var resultText4 = `
+            <p><strong>Agora, as boas notícias</strong></p>
+            <p>Isso significa que você está muito mais perto de iniciar um poderoso protocolo de <strong>DETOX</strong> — o mesmo que já tem ajudado inúmeras pessoas vacinadas a recuperarem sua saúde e bem-estar.</p>
+            <p>Ao seguir esse protocolo simples, você fortalece sua imunidade e permite que seu corpo elimine naturalmente a proteína spike — um dos principais responsáveis por diversos efeitos colaterais.</p>
+            <p>Com o detox completo, seu cérebro e seu corpo tendem a funcionar de forma mais equilibrada — como mostrado na imagem à direita — e você literalmente poderá retomar a vida com mais energia, clareza e vitalidade.</p>
+            <p>Não é segredo que muitos poderosos querem manter isso longe da população. Afinal, quanto mais pessoas doentes, mais lucro para as grandes farmacêuticas, que alimentam um ciclo contínuo de dependência de remédios e vacinas.</p>
+            <p><strong>Clique no botão abaixo para acessar a página com todas as instruções</strong> — entenda como a proteína spike age no corpo, como combatê-la e veja relatos reais de pessoas que já recuperaram sua saúde com o nosso protocolo de Detox.</p>
+        `;
+
+        $("#result_ponit3").html(resultText3);
+        $("#result_ponit4").html(resultText4);
+
+        $(".quiznum, .quiznummob").hide();
+
+        $(".qs.result").fadeIn(800);
+        $(".resultbtn").fadeIn(800);
+
+        $('html, body').animate({ scrollTop: 0 }, 'slow');
+    }
+});
