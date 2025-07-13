@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="utf-8">
+    <title>Spike Detox - QUIZ</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Responda ao quiz e identifique os efeitos colaterais da proteína Spike.">
+
+    <link href="assets/css/quiz.css" rel="stylesheet" />
+    <link href="assets/img/icon.png" rel="icon" />
+
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;700;800&display=swap" rel="stylesheet">
+
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"/>
+</head>
+
+<body>
+<header>
+    <div class="content">
+        <h1 id="headertitle">
+            <span>Responda a este quiz para identificar se você tem algum efeito colateral da proteína Spike da </span>
+            <span class="text-danger">VACINA do COVID-19</span>
+        </h1>
+    </div>
+</header>
+
+<div id="mainQuiz">
+    <section class="separrow">
+        <img src="assets/img/arrowdown2.png" alt="Seta para baixo" />
+    </section>
+
+    <section class="quiz">
+        <div class="content">
+            <div class="progress-indicator desktop-progress">
+                <ul>
+                    <li class="active-progress">1</li>
+                    <li>2</li>
+                    <li>3</li>
+                    <li>4</li>
+                    <li>5</li>
+                </ul>
+            </div>
+
+            <div class="progress-indicator mobile-progress">
+                <h3><span class="quiz-number-current">1</span> / <span class="quiz-number-total">5</span></h3>
+            </div>
+
+            <div class="qwrap">
+                <div class="qs active-question">
+                    <div class="qimg">
+                        <img src="assets/img/dose.png" alt="Doses de vacina"/>
+                    </div>
+                    <div class="question">
+                        <h3>Quantas doses da Vacina você tomou?</h3>
+                        <ul class="qoptions">
+                            <li data-points="1"><div class="qcir"><i class="fa fa-check"></i></div><span>Uma</span></li>
+                            <li data-points="2"><div class="qcir"><i class="fa fa-check"></i></div><span>Duas</span></li>
+                            <li data-points="3"><div class="qcir"><i class="fa fa-check"></i></div><span>Três ou mais</span></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="qs">
+                    <div class="qimg">
+                        <img src="assets/img/Esqueci.png" alt="Pessoa com dificuldade de concentração"/>
+                    </div>
+                    <div class="question">
+                        <h3>Ultimamente tem esquecido das coisas ou dificuldade de concentração?</h3>
+                        <ul class="qoptions">
+                            <li data-points="2"><div class="qcir"><i class="fa fa-check"></i></div><span>Várias vezes</span></li>
+                            <li data-points="1"><div class="qcir"><i class="fa fa-check"></i></div><span>Algumas vezes</span></li>
+                            <li data-points="0"><div class="qcir"><i class="fa fa-check"></i></div><span>Poucas Vezes</span></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="qs">
+                    <div class="qimg">
+                        <img src="assets/img/dor.png" alt="Pessoa com dor nas articulações"/>
+                    </div>
+                    <div class="question">
+                        <h3>Você tem dores nas articulações?</h3>
+                        <ul class="qoptions">
+                            <li data-points="2"><div class="qcir"><i class="fa fa-check"></i></div><span>Sim</span></li>
+                            <li data-points="0"><div class="qcir"><i class="fa fa-check"></i></div><span>Não</span></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="qs">
+                    <div class="qimg">
+                        <img src="assets/img/cansado.png" alt="Pessoa cansada"/>
+                    </div>
+                    <div class="question">
+                        <h3>Tem se sentido cansado e indisposto ultimamente?</h3>
+                        <ul class="qoptions">
+                            <li data-points="2"><div class="qcir"><i class="fa fa-check"></i></div><span>Sim</span></li>
+                            <li data-points="1"><div class="qcir"><i class="fa fa-check"></i></div><span>Não</span></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="qs">
+                    <div class="qimg">
+                        <img src="assets/img/peito.png" alt="Pessoa com dor no peito"/>
+                    </div>
+                    <div class="question">
+                        <h3>Sente dores no peito ou coração acelerado?</h3>
+                        <ul class="qoptions">
+                            <li data-points="2"><div class="qcir"><i class="fa fa-check"></i></div><span>Sim, frequentemente</span></li>
+                            <li data-points="1"><div class="qcir"><i class="fa fa-check"></i></div><span>Às vezes</span></li>
+                            <li data-points="0"><div class="qcir"><i class="fa fa-check"></i></div><span>Raramente</span></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="qs result">
+                    <h3 id="result_ponit3">De acordo com as respostas, possivelmente essa é a condição do seu cérebro atualmente...</h3>
+                    <p class="result-image"><img src="assets/img/cerebro.png" alt="Comparação de cérebros"></p>
+                    <div id="result_ponit4" class="rescontent-res"></div>
+                </div>
+            </div>
+
+            <div class="result-button-container">
+                <a class="result-button" href="https://spikedetox.life/detox" target="_blank">ACESSAR PÁGINA &raquo;</a>
+            </div>
+        </div>
+    </section>
+</div>
+
+<footer>
+    <div class="content">
+        <ul>
+            <li><a href="privacy.html" target="_blank">Política de Privacidade</a></li>
+            <li><a href="terms.html" target="_blank">Termos de Uso</a></li>
+        </ul>
+        <span>Copyright &copy; 2025 Spike Detox. Todos os direitos reservados.</span>
+    </div>
+</footer>
+
+<script src="assets/js/quiz.js" defer></script>
+</body>
+
+</html>
