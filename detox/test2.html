@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Protocolo Antídoto Spike - Versão Final Otimizada</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,400;0,700;1,400&family=Oswald:wght@700&family=Source+Sans+Pro:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+
+  <style>
+    /* --- Início do Bloco CSS Otimizado --- */
+
+          /* --- Variáveis de Design Otimizadas --- */
+          :root {
+              --font-headline: 'Oswald', sans-serif;
+              --font-body: 'Lato', sans-serif;
+              --color-red-premium: #d90429;
+              --color-blue-primary: #0056b3;
+              --color-cta-orange: #ff6f00;
+              --color-success-green: #28a745;
+              --color-text-dark: #212121;
+              --color-text-body: #333;
+              --color-bg-main: #ffffff;
+              --color-bg-highlight: #f7f7f7;
+          }
+
+          * { margin: 0; padding: 0; box-sizing: border-box; }
+
+          body {
+              font-family: var(--font-body), sans-serif;
+              font-size: 21px;  /* ALTERADO de 19px para 21px para máximo conforto */
+              line-height: 1.7;
+              color: var(--color-text-body);
+              background-color: var(--color-bg-highlight);
+              -webkit-font-smoothing: antialiased;
+              -moz-osx-font-smoothing: grayscale;
+          }
+
+          img { max-width: 100%; height: auto; border: 0; }
+          a { color: var(--color-blue-primary); text-decoration: none; }
+          a:hover { text-decoration: underline; }
+
+          .container {
+              width: 100%;
+              max-width: 880px; /* Reduzido para melhor legibilidade */
+              margin: 0 auto;
+              padding: 0 20px;
+              background-color: var(--color-bg-main);
+              box-shadow: 0 5px 25px rgba(0,0,0,0.07);
+          }
+
+          main { padding: 30px 0; }
+          section { padding: 30px 0; }
+          .section-highlight {
+              background-color: var(--color-bg-highlight);
+              padding: 40px 20px;
+              margin: 30px -20px; /* Efeito de largura total */
+          }
+
+          h1, h2, h3, h4 {
+              font-family: var(--font-headline);
+              font-weight: 700;
+              line-height: 1.2;
+              color: var(--color-text-dark);
+              text-align: center;
+          }
+          .pre-headline { font-size: 25px; margin-bottom: 2rem; }
+          .pre-headline span { color: var(--color-red-premium); }
+          h1 { font-size: 52px; letter-spacing: -1px; margin-bottom: 0.5rem; }
+          h1 span { color: var(--color-red-premium); }
+          h2 { font-size: 38px; color: var(--color-blue-primary); letter-spacing: -1px; margin-bottom: 2rem; }
+          .section-headline { font-size: 42px; color: var(--color-text-dark); letter-spacing: -1px; margin: 1.5rem 0; }
+          .section-headline span { color: var(--color-red-premium); text-decoration: underline; }
+
+          p { font-size: 20px; margin-bottom: 1.2rem; }
+          p span { color: var(--color-red-premium); }
+          p strong {
+              font-weight: 900; /* DEIXANDO O NEGRITO AINDA MAIS FORTE E VISÍVEL */
+              color: var(--color-red-premium);
+          }
+
+          .grid { display: flex; flex-wrap: wrap; gap: 2rem; align-items: center; }
+          .col-1-2 { flex: 1 1 48%; min-width: 300px; }
+
+          .image-caption { text-align: center; margin-bottom: 2.5rem; }
+          .image-caption p { font-family: var(--font-headline); font-weight: 700; font-size: 19px; }
+
+          .feature-box {
+              background-color: #ffffff;
+              border: 1px solid #e3e3e3;
+              border-radius: 8px;
+              padding: 25px 35px;
+              margin: 2rem 0;
+          }
+
+          .symptom-list { list-style: none; padding: 0; }
+          .symptom-list li { font-size: 1.2em; margin-bottom: 15px; padding-left: 40px; position: relative; }
+          .symptom-list li::before { content: '✅'; position: absolute; left: 0; top: 0px; font-size: 1.3em; color: var(--color-success-green); }
+
+          .bonus-stack-box { background-color: #fff; border: 2px solid #ddd; border-radius: 10px; padding: 30px; }
+          .bonus-stack-box hr { border: 0; border-top: 1px solid #eee; margin: 20px 0; }
+          .bonus-stack-box h4 { font-size: 1.6em; text-align: left;}
+          .bonus-stack-box h4 span { font-size: 0.8em; color: var(--color-blue-primary); }
+
+          .price-section { text-align: center; padding: 30px; border-radius: 8px; }
+          .price-section .total-value { text-decoration: line-through; color: #888; font-size: 1.5em; }
+          .price-section .final-price { font-family: var(--font-headline); font-size: 3em; font-weight: 900; color: var(--color-success-green); margin: 10px 0; }
+
+          .cta-button {
+              display: block; width: 95%; max-width: 600px; margin: 25px auto; padding: 25px;
+              background-color: var(--color-cta-orange); color: #ffffff !important; text-decoration: none;
+              font-family: var(--font-headline); font-size: 2em; font-weight: 700; text-align: center;
+              border-radius: 10px; border-bottom: 6px solid #b34d00;
+              box-shadow: 0 5px 15px rgba(0,0,0, 0.2); transition: all 0.2s ease-in-out;
+          }
+          .cta-button:hover { transform: translateY(-3px); box-shadow: 0 8px 20px rgba(0,0,0, 0.3); text-decoration: none; }
+          .cta-button:active { transform: translateY(1px); border-bottom-width: 3px; }
+          .cta-button-subtext { display: block; font-size: 0.6em; font-weight: 400; margin-top: 5px; font-family: var(--font-body); }
+
+          .trust-seals { text-align: center; margin-top: 15px; color: #777; }
+
+          .guarantee-box { border: 3px dashed var(--color-success-green); padding: 30px; margin: 40px 0; text-align: center; background-color: #f0fff4; }
+          .guarantee-box h2 { color: #155724; margin-top: 0; }
+
+          footer { text-align: center; padding: 2rem 0; font-size: 14px; color: #666; }
+
+          @media (max-width: 768px) {
+              body {
+                  font-size: 19px; /* GARANTE UMA FONTE GRANDE E LEGÍVEL NO CELULAR */
+              }
+              h1 { font-size: 36px; }
+              h2 { font-size: 28px; }
+              .section-highlight { margin: 30px -20px; }
+              .grid { flex-direction: column; }
+          }
+
+  /* --- Fim do Bloco CSS Otimizado --- */
+  </style>
+</head>
+<body>
+
+<main class="container">
+
+  <header class="text-center" style="padding: 20px 0;">
+    <p class="pre-headline">Faça esse truque <span>Incomum 10-Minutos</span> Antes de Dormir Para Ajudar a Eliminar os Efeitos da Vacina</p>
+    <h1>“Você se sente... <span>DIFERENTE...</span> Desde que tomou a Vacina?”</h1>
+    <h2>Se a sua energia, clareza mental e bem-estar geral desapareceram e ninguém consegue te dar uma resposta, esta página é para você.</h2>
+  </header>
+
+  <section class="story-intro grid">
+    <div class="col col-1-2">
+      <p>Você fez o que achava certo. O que "todos" estavam fazendo. O que a mídia e as autoridades disseram ser seu dever para "proteger a si e aos outros"…</p>
+      <p>Mas uma pergunta silenciosa ecoa na sua mente ... <span>Por que eu não me sinto mais o mesmo?</span>...</p>
+      <p>Você não está sozinho. E o mais importante: Você não está imaginando coisas.</p>
+      <p>É uma exaustão profunda que nenhuma noite de sono consegue curar. Uma névoa mental que rouba suas palavras e sua confiança.</p>
+      <p><strong>Me arrependo muito de ter tomado tantas doses…</strong></p>
+      <p>É o seu coração que dispara sem aviso, causando um medo silencioso. São as dores que transformam tarefas simples em desafios. Sua intuição está correta: algo <em>MUDOU!</em></p>
+    </div>
+    <div class="col col-1-2">
+      <div class="image-caption">
+        <img alt="Mulher com ilustração de coração partido" src="assets/img/heart-stress.jpg" style="border-radius: 8px; box-shadow: 0 4px 10px rgba(0,0,0,0.1);" />
+        <p>Milhões relatam problemas após vacinas contra COVID-19, como <span> infartos, AVCs, fraqueza, dor e cansaço</span>, ligados à proteína Spike.</p>
+      </div>
+      <div class="image-caption">
+        <img alt="Dose de vacina ou ilustração de conflito" src="assets/img/dose.png" />
+      </div>
+    </div>
+  </section>
+
+  <section class="section-highlight">
+    <h3 class="section-headline">O que realmente <span>INJETARAM</span> em nós?</h3>
+    <div class="feature-box" style="background-color: #fffde7;">
+      <p>Prometeram uma ‘mensagem’ segura que ensinaria nosso corpo a se defender e depois desapareceria...</p>
+      <p><strong>Mas, e se a mensagem <span>NUNCA</span> parou de ser enviada?</strong></p>
+      <p>Pense nisso: uma tecnologia aprovada em tempo recorde, gerando lucros bilionários para empresas protegidas por imunidade legal. Enquanto isso, médicos e cientistas que questionaram a segurança foram caçados e <span>SILENCIADOS</span>.</p>
+      <p>Muitos agora temem que o ‘interruptor’ que deveria desligar a produção da proteína Spike tenha <strong>FALHADO</strong>.</p>
+      <h2 style="font-size: 1.8em; color: var(--color-text-dark);">Você foi um participante de um <em>EXPERIMENTO</em> e tem o direito de saber como lutar de volta.</h2>
+    </div>
+  </section>
+
+  <section>
+    <h3 class="section-headline">Se Você se Identifica Com Estes <span>SINTOMAS</span>, Sua Intuição Está Gritando Por Ajuda...</h3>
+    <ul class="symptom-list">
+      <li><strong>Fadiga Crônica:</strong> Uma exaustão que te faz sentir ANOS mais velho(a) e rouba a alegria dos seus dias.</li>
+      <li><strong>"Névoa Mental" (Brain Fog):</strong> Dificuldade de concentração e esquecimento de palavras que te deixam INSEGURO(A) e frustrado(a).</li>
+      <li><strong>Sintomas Cardíacos:</strong> Palpitações e um coração <em>acelerado</em> do nada, que os médicos insistem em chamar de "apenas ansiedade".</li>
+      <li><strong>Dores Persistentes:</strong> Dores nas articulações e musculares que simplesmente <span>NÃO VÃO EMBORA</span>, limitando sua vida.</li>
+      <li><strong>Sistema Imunológico Fraco:</strong> Ficar doente com uma frequência que não é normal para você, sentindo-se constantemente <em>vulnerável</em>.</li>
+    </ul>
+    <p style="text-align:center; font-weight: 700; font-size: 1.2em; margin-top: 2rem;">Se você marcou um ou mais itens, a informação a seguir é a MAIS IMPORTANTE que você lerá este ano.</p>
+  </section>
+
+  <section class="section-highlight">
+    <h2 style="color: var(--color-text-dark);">O Que Pessoas Reais Estão Dizendo...</h2>
+    <div class="grid">
+      <div class="col col-1-2">
+        <div class="feature-box">
+          <p>"Eu achei que estava enlouquecendo. A fadiga era insuportável. Depois de seguir o protocolo por 3 semanas, eu sinto que tenho minha vida de volta. É como se uma névoa pesada tivesse sido levantada."</p>
+          <p style="text-align:right;"><strong>- Maria S., 58, São Paulo/SP</strong></p>
+        </div>
+      </div>
+      <div class="col col-1-2">
+        <div class="feature-box">
+          <p>"As dores nas juntas me impediam de brincar com meus netos. Eu estava cético, mas a garantia me convenceu a tentar. Hoje, consigo correr no parque com eles de novo. Não tem preço."</p>
+          <p style="text-align:right;"><strong>- João C., 65, Rio de Janeiro/RJ</strong></p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h2 style="font-size: 2.8em;">Apresentando: O Protocolo Antídoto Spike</h2>
+    <h3>O sistema passo a passo para ajudar seu corpo a <span>neutralizar</span> a proteína Spike e <span>RECUPERAR</span> sua saúde.</h3>
+    <p style="text-align: center;">Isto não é um apanhado de dicas. É um <strong>protocolo de batalha</strong> focado em 3 objetivos claros:</p>
+    <img src="assets/img/detox.png" alt="Caixa digital do Protocolo Antídoto Spike" style="display:block; max-width: 500px; margin: 30px auto;">
+  </section>
+
+  <section class="section-highlight">
+    <h2 style="color: var(--color-text-dark); margin-bottom: 1rem;">Aqui Está o Seu Arsenal Completo Para Retomar o Controle:</h2>
+    <div class="bonus-stack-box">
+      <h4>O Protocolo Antídoto Spike <span></span></h4>
+      <p>O guia central, passo a passo, detalhando as substâncias, alimentos e ações para combater a proteína Spike.</p>
+      <hr>
+      <h4>🎁 BÔNUS #1: Guia de Nutrição Anti-Inflamatória <span></span></h4>
+      <p>Acelere seus resultados com o plano alimentar para "desligar" a inflamação no seu corpo.</p>
+      <hr>
+      <h4>🎁 BÔNUS #2: A Lista Secreta de Suplementos <span></span></h4>
+      <p>Os compostos-chave com dosagens recomendadas para você não gastar dinheiro com o que não funciona.</p>
+
+      <h4>🎁 BÔNUS DE AÇÃO RÁPIDA: Guia Detox de 7 Dias <span></span></h4>
+      <p>Um plano de ataque de 1 semana para você sentir os primeiros sinais de alívio no seu corpo.</p>
+    </div>
+  </section>
+
+
+  </section>
+
+  <a href="SEU_LINK_DE_VENDA_AQUI" class="cta-button">
+    QUERO MEU ACESSO IMEDIATO AGORA!
+    <span class="cta-button-subtext">Clique Aqui Para Garantir Seu Desconto e Todos os Bônus</span>
+  </a>
+  <div class="trust-seals">
+    <p>💳 Pagamento 100% Seguro com Criptografia SSL</p>
+  </div>
+
+  <section class="guarantee-box">
+    <img src="assets/img/GARANTIA.avif" alt="Selo de Garantia de 60 Dias" style="max-width: 150px; margin-bottom: 15px;">
+    <h2>Sua Garantia Blindada de 60 Dias</h2>
+    <p>Nós assumimos 100% do risco. Adquira o protocolo, siga os passos. Se em 60 dias você não sentir uma melhora real e notável, basta nos enviar um único e-mail para receber cada centavo do seu dinheiro de volta. Sem perguntas, sem burocracia.</p>
+    <p><strong>O risco é todo nosso. A única forma de você perder é continuar sem fazer nada.</strong></p>
+  </section>
+
+  <section class="text-center">
+    <h2>Ainda em dúvida? Pense nisso...</h2>
+    <div class="grid">
+      <div class="col col-1-2" style="text-align: left; padding: 20px;">
+        <h4 style="color: var(--color-red-premium);">Opção 1: Não Fazer Nada</h4>
+        <p>Continuar sentindo os mesmos sintomas, talvez vê-los piorar, e aceitar que esta é sua nova realidade. O custo? Sua saúde, sua paz de espírito e a qualidade dos seus anos dourados.</p>
+      </div>
+      <div class="col col-1-2" style="text-align: left; background-color: #fff; border-radius: 8px; padding: 20px; border: 2px solid var(--color-success-green);">
+        <h4 style="color: var(--color-success-green);">Opção 2: Tentar o Protocolo</h4>
+        <p>Investir o preço de um jantar para ter acesso a um plano de ação completo, com risco zero graças à nossa garantia. Na pior das hipóteses, você pede seu dinheiro de volta. Na melhor, você recupera sua vida.</p>
+      </div>
+    </div>
+    <p style="margin-top: 2rem;">A escolha parece bem clara, não é?</p>
+
+    <a href="SEU_LINK_DE_VENDA_AQUI" class="cta-button" style="background-color: var(--color-success-green); border-color: #218838; color: #fff !important;">
+      SIM, QUERO COMEÇAR MINHA RECUPERAÇÃO!
+    </a>
+  </section>
+
+  <section class="feature-box">
+    <h2>Perguntas Frequentes (FAQ)</h2>
+    <h4>Isso é seguro?</h4>
+    <p>O protocolo é baseado em substâncias naturais, alimentos e práticas seguras. Recomendamos sempre, claro, conversar com um profissional de saúde de sua confiança.</p>
+    <h4>Em quanto tempo vejo resultados?</h4>
+    <p>Muitos usuários relatam sentir mais energia e clareza já na primeira semana com o Guia de Ação Rápida. Resultados mais profundos são tipicamente observados entre 30 a 60 dias.</p>
+    <h4>Preciso comprar suplementos caros?</h4>
+    <p>Nós damos opções para todos os bolsos, incluindo as fontes mais potentes encontradas em alimentos comuns. O investimento é totalmente controlável por você.</p>
+  </section>
+
+</main>
+
+<footer>
+  <div class="container text-center">
+    <p>Copyright © 2025 · Protocolo Antídoto Spike · Todos os Direitos Reservados</p>
+    <p>Este produto não se destina a diagnosticar, tratar, curar ou prevenir qualquer doença. As informações contidas nesta página são para fins educacionais e não substituem o aconselhamento médico.</p>
+    <p><a href="#">Termos de Uso</a> | <a href="#">Política de Privacidade</a></p>
+  </div>
+</footer>
+
+</body>
+</html>
