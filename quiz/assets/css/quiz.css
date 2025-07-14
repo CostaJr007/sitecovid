@@ -354,7 +354,12 @@ footer ul {
 /* Corrige a aparência do botão "ACESSAR PÁGINA" */
 /* ========================================================= */
 
+/* ================================================================= */
+/* --- CORREÇÃO FINAL: FAZ O BOTÃO APARECER SOMENTE NO RESULTADO --- */
+/* ================================================================= */
+
 .result-button-container {
+    display: none; /* ESTA É A LINHA QUE ESCONDE O BOTÃO POR PADRÃO */
     margin-top: 30px;
 }
 
