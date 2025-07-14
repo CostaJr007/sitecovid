@@ -349,3 +349,32 @@ footer ul {
         display: none;
     }
 }
+/* ========================================================= */
+/* --- RESTAURAÇÃO DO ESTILO ORIGINAL DO BOTÃO FINAL --- */
+/* Corrige a aparência do botão "ACESSAR PÁGINA" */
+/* ========================================================= */
+
+.result-button-container {
+    margin-top: 30px;
+}
+
+.result-button {
+    display: inline-block;
+    background: #e83434;
+    padding: 20px;
+    width: 100%;
+    max-width: 350px;
+    font-size: clamp(1.2rem, 5vw, 1.5rem);
+    color: var(--light-text);
+    font-weight: bold;
+    border-radius: 15px;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.5);
+    border: 1px solid #c11717;
+    cursor: pointer;
+    text-decoration: none;
+    transition: background-color 0.2s;
+}
+
+.result-button:hover {
+    background-color: #c11111;
+}
