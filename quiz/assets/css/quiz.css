@@ -383,3 +383,23 @@ footer ul {
 .result-button:hover {
     background-color: #c11111;
 }
+
+/* ========================================================= */
+/* --- CORREÇÃO PARA OS CHECKS APARECENDO ANTES DA HORA --- */
+/* ========================================================= */
+
+/* 1. Esconde TODOS os ícones de check por padrão. */
+.qcir .fa-check {
+    visibility: hidden;
+}
+
+/* 2. Deixa o círculo azul e o check branco quando selecionado */
+.qoptions li.selected .qcir {
+    background-color: var(--primary-blue);
+    color: var(--light-text);
+}
+
+/* 3. Mostra APENAS o ícone do item que foi selecionado (clicado). */
+.qoptions li.selected .qcir .fa-check {
+    visibility: visible;
+}
