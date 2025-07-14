@@ -1,0 +1,404 @@
+/* --- BASIC RESET AND VARIABLES --- */
+:root {
+    --danger-color: #ff0000;
+    --primary-blue: #0086ff;
+    --light-text: #ffffff;
+    --dark-text: #000000;
+    --grey-bg: #dadada;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Nunito', sans-serif;
+    background-color: var(--dark-text);
+    color: var(--light-text);
+}
+
+/* --- GENERAL ELEMENTS --- */
+header {
+    padding: 15px 0; /* Reduced header padding overall */
+}
+
+header .content h1 {
+    font-size: clamp(1.6rem, 5vw, 2.2rem); /* Slightly reduced the title font size */
+    line-height: 1.1;
+}
+
+footer {
+    padding: 15px 0; /* Reduced footer padding overall */
+    font-size: 13px;
+}
+
+.content {
+    width: 95%;
+    max-width: 960px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.text-danger {
+    color: var(--danger-color);
+}
+
+#mainQuiz {
+    padding-bottom: 20px;
+    background: url("../img/fundo3.png") #fff top center no-repeat;
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start; /* Aligns content to the top on mobile */
+    min-height: calc(100vh - (15px * 2) - (15px * 2)); /* Full screen height minus header and footer padding */
+}
+
+.separrow {
+    text-align: center;
+    margin-top: 10px; /* Added a bit of margin */
+}
+.separrow img {
+    width: 80%; /* So the arrow doesn't take up too much width */
+    max-width: 60px;
+    margin-top: -1px;
+}
+
+.quiz {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start; /* Aligns quiz content to the top */
+    width: 100%;
+    padding: 15px; /* Reduced quiz padding */
+    flex-grow: 1; /* Allows the quiz to grow and occupy space */
+}
+
+/* --- PROGRESS INDICATOR --- */
+.progress-indicator {
+    margin-bottom: 10px; /* Reduced margin */
+}
+
+.progress-indicator ul {
+    padding: 10px 25px; /* Reduced padding */
+    font-size: 14px;
+}
+
+.progress-indicator li {
+    height: 25px;
+    width: 25px;
+    line-height: 25px;
+    font-size: 13px;
+    margin: 0 3px;
+}
+
+.mobile-progress {
+    padding: 8px 0; /* Reduced padding */
+    font-size: 20px;
+}
+
+/* --- QUIZ CONTAINER --- */
+.qwrap {
+    background: var(--light-text);
+    color: var(--dark-text);
+    position: relative;
+    padding: 15px; /* Reduced padding */
+    box-shadow: 0 2px 12px rgba(47, 68, 118, 0.53);
+    border-radius: 15px;
+    border: 4px solid #eee; /* Reduced border width */
+    width: 95%;
+    max-width: 450px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.qs {
+    display: none; /* Hidden by default */
+    flex-direction: column;
+    align-items: center;
+    gap: 10px; /* Reduced spacing */
+    width: 100%;
+}
+
+.qs.active-question {
+    display: flex; /* Visible when active */
+}
+
+.qimg img {
+    max-width: 120px; /* Reduced image size */
+    height: auto;
+    margin-bottom: 10px; /* Reduced margin */
+}
+
+.question h3 {
+    font-weight: 700;
+    font-size: clamp(1.1rem, 4vw, 1.4rem); /* Reduced font size */
+    line-height: 1.2;
+    margin-bottom: 10px; /* Reduced margin */
+    text-align: center;
+}
+
+/* --- ANSWER OPTIONS --- */
+.qoptions {
+    list-style: none;
+    width: 100%;
+}
+
+.qoptions li {
+    position: relative;
+    margin-bottom: 8px; /* Reduced margin */
+    cursor: pointer;
+    padding: 10px 10px 10px 45px; /* Reduced padding */
+    border: 1.5px solid var(--grey-bg); /* Reduced border width */
+    border-radius: 8px;
+    text-align: left;
+    transition: background-color 0.2s, border-color 0.2s;
+}
+
+.qoptions li span {
+    font-size: clamp(0.9rem, 3.5vw, 1.1rem); /* Reduced font size */
+    font-weight: 700;
+}
+
+.qcir {
+    height: 25px;
+    width: 25px;
+    border: 1.5px solid var(--primary-blue); /* Reduced border width */
+    border-radius: 50%;
+    position: absolute;
+    top: 50%;
+    left: 10px;
+    transform: translateY(-50%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.qcir i {
+    font-size: 0.8rem;
+}
+
+/* --- RESULT SCREEN --- */
+.result h3 {
+    font-size: clamp(1.2rem, 5vw, 1.5rem);
+    margin-bottom: 15px;
+}
+
+.result-image img {
+    max-width: 350px; /* Reduced result image size */
+}
+
+.rescontent-res p {
+    font-size: clamp(0.9rem, 4vw, 1.1rem);
+    margin: 10px 0;
+}
+
+.result-button {
+    padding: 15px; /* Reduced result button padding */
+    font-size: clamp(1rem, 5vw, 1.3rem);
+    max-width: 300px; /* Reduced max button width */
+    border-radius: 12px; /* Reduced border radius */
+}
+
+/* --- FOOTER --- */
+footer ul {
+    margin-bottom: 15px; /* Reduced footer margin */
+    gap: 8px;
+}
+
+/* --- MEDIA QUERY FOR DESKTOP (Mobile First) --- */
+@media (min-width: 768px) {
+    header {
+        padding: 20px 0;
+    }
+    header .content h1 {
+        font-size: clamp(1.8rem, 5vw, 2.5rem);
+    }
+    footer {
+        padding: 20px 0;
+        font-size: 14px;
+    }
+    #mainQuiz {
+        justify-content: center; /* Centers the quiz on desktop */
+        min-height: 450px; /* Restores min-height for desktop */
+    }
+    .separrow {
+        margin-top: -1px;
+    }
+    .separrow img {
+        max-width: none;
+        width: auto;
+    }
+    .quiz {
+        padding: 20px 0;
+        align-items: center; /* Vertically centers on desktop */
+        flex-grow: 0;
+    }
+    .progress-indicator {
+        margin-bottom: 20px;
+    }
+    .progress-indicator ul {
+        padding: 12px 34px;
+        font-size: 15px;
+    }
+    .progress-indicator li {
+        height: 30px;
+        width: 30px;
+        line-height: 30px;
+        font-size: 15px;
+        margin: 0 5px;
+    }
+    .mobile-progress {
+        display: none;
+    }
+    .desktop-progress {
+        display: block;
+    }
+    .qwrap {
+        padding: 20px;
+        border-radius: 20px;
+        border: 6px solid #eee;
+        width: 95%;
+        max-width: 960px;
+        flex-direction: row;
+        align-items: center;
+    }
+    .qs {
+        gap: 20px;
+    }
+    .qimg {
+        flex-basis: 35%;
+        display: flex;
+        justify-content: center;
+    }
+    .qimg img {
+        max-width: 200px;
+        margin-bottom: 0;
+    }
+    .question {
+        flex-basis: 65%;
+        text-align: left;
+    }
+    .question h3 {
+        font-size: clamp(1.3rem, 4vw, 1.6rem);
+        margin-bottom: 20px;
+        text-align: left;
+    }
+    .qoptions li {
+        padding: 15px 15px 15px 60px;
+        margin-bottom: 20px;
+        border: 2px solid var(--grey-bg);
+    }
+    .qoptions li span {
+        font-size: clamp(1.1rem, 3.5vw, 1.3rem);
+    }
+    .qcir {
+        height: 30px;
+        width: 30px;
+        border-width: 2px;
+        left: 15px;
+    }
+    .qcir i {
+        font-size: inherit;
+    }
+    .result h3 {
+        font-size: clamp(1.3rem, 5vw, 1.6rem);
+        margin-bottom: 20px;
+    }
+    .result-image img {
+        max-width: 450px;
+    }
+    .rescontent-res p {
+        font-size: clamp(1rem, 4vw, 1.2rem);
+        margin: 15px 0;
+        text-align: left;
+    }
+    .result-button {
+        padding: 20px;
+        font-size: clamp(1.2rem, 5vw, 1.5rem);
+        max-width: 350px;
+        border-radius: 15px;
+    }
+    footer ul {
+        flex-direction: row;
+        justify-content: center;
+        gap: 30px;
+        margin-bottom: 20px;
+    }
+}
+/* ========================================================= */
+/* --- FINAL FIX FOR PROGRESS INDICATOR --- */
+/* Ensures the desktop indicator is hidden on mobile */
+/* ========================================================= */
+
+.desktop-progress {
+    display: none;
+}
+.mobile-progress {
+    display: block;
+}
+
+/* On larger screens, inverts visibility as it should be */
+@media (min-width: 768px) {
+    .desktop-progress {
+        display: block;
+    }
+    .mobile-progress {
+        display: none;
+    }
+}
+/* ========================================================= */
+/* --- RESTORATION OF ORIGINAL FINAL BUTTON STYLE --- */
+/* Corrects the appearance of the "ACCESS PAGE" button */
+/* ========================================================= */
+
+/* ================================================================= */
+/* --- FINAL FIX: MAKES THE BUTTON APPEAR ONLY ON THE RESULT --- */
+/* ================================================================= */
+
+.result-button-container {
+    display: none; /* THIS IS THE LINE THAT HIDES THE BUTTON BY DEFAULT */
+    margin-top: 30px;
+}
+
+.result-button {
+    display: inline-block;
+    background: #e83434;
+    padding: 20px;
+    width: 100%;
+    max-width: 350px;
+    font-size: clamp(1.2rem, 5vw, 1.5rem);
+    color: var(--light-text);
+    font-weight: bold;
+    border-radius: 15px;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.5);
+    border: 1px solid #c11717;
+    cursor: pointer;
+    text-decoration: none;
+    transition: background-color 0.2s;
+}
+
+.result-button:hover {
+    background-color: #c11111;
+}
+/* ========================================================= */
+/* --- CORREÇÃO PARA OS CHECKS APARECENDO ANTES DA HORA --- */
+/* ========================================================= */
+
+/* 1. Esconde TODOS os ícones de check por padrão. */
+.qcir .fa-check {
+    visibility: hidden;
+}
+
+/* 2. Deixa o círculo azul e o check branco quando selecionado */
+.qoptions li.selected .qcir {
+    background-color: var(--primary-blue);
+    color: var(--light-text);
+}
+
+/* 3. Mostra APENAS o ícone do item que foi selecionado (clicado). */
+.qoptions li.selected .qcir .fa-check {
+    visibility: visible;
+}
