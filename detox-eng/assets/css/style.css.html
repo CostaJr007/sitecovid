@@ -1,0 +1,185 @@
+/* ------------------------- */
+/* 0. CONFIGURAÇÃO GLOBAL    */
+/* ------------------------- */
+:root {
+--color-primary: #ff0000;
+--color-secondary: #3366ff;
+--color-dark: #212121;
+--color-light: #f4f4f4;
+--color-white: #ffffff;
+
+--font-heading: 'Oswald', sans-serif;
+--font-body: 'Lato', sans-serif;
+
+--container-width: 1100px;
+--spacing: 1.5rem;
+}
+
+*, *::before, *::after {
+box-sizing: border-box;
+margin: 0;
+padding: 0;
+}
+
+html {
+scroll-behavior: smooth;
+}
+
+body {
+font-family: var(--font-body);
+font-size: 18px;
+line-height: 1.7;
+color: var(--color-dark);
+background-color: var(--color-light);
+-webkit-font-smoothing: antialiased;
+-moz-osx-font-smoothing: grayscale;
+}
+
+.container {
+width: 90%;
+max-width: var(--container-width);
+margin: 0 auto;
+}
+
+img {
+max-width: 100%;
+height: auto;
+display: block;
+}
+
+/* ------------------------- */
+/* 1. ESTILOS DE TEXTO       */
+/* ------------------------- */
+h1, h2, h3 {
+font-family: var(--font-heading);
+font-weight: 700;
+line-height: 1.2;
+margin-bottom: var(--spacing);
+letter-spacing: -1px;
+}
+
+h1 { font-size: clamp(2.5rem, 8vw, 4rem); } /* Adapta o tamanho da fonte ao tamanho da tela */
+h2 { font-size: clamp(2rem, 7vw, 3rem); }
+h3 { font-size: clamp(1.5rem, 6vw, 2.2rem); }
+
+p { margin-bottom: var(--spacing); }
+a { color: var(--color-secondary); text-decoration: none; }
+a:hover { text-decoration: underline; }
+
+.highlight { color: var(--color-primary); }
+.strong { font-weight: 700; }
+.subtitle { font-size: 1.2rem; font-style: italic; color: #555; }
+
+/* ------------------------- */
+/* 2. COMPONENTES E SEÇÕES   */
+/* ------------------------- */
+
+/* Header Principal */
+.main-header {
+background: var(--color-dark);
+color: var(--color-white);
+text-align: center;
+padding: calc(var(--spacing) * 3) var(--spacing);
+}
+
+.main-header__pre-headline {
+font-family: var(--font-heading);
+font-size: 1.1rem;
+margin: 0;
+}
+
+.main-header__headline {
+margin: 0;
+color: var(--color-white);
+}
+
+/* Seções de Texto Genéricas */
+.text-section {
+text-align: center;
+padding: calc(var(--spacing) * 2) var(--spacing);
+background-color: var(--color-white);
+}
+
+/* Bloco de História (Texto + Imagem) */
+.story-block {
+display: flex;
+flex-direction: column; /* MOBILE FIRST: empilhado por padrão */
+gap: calc(var(--spacing) * 2);
+padding: calc(var(--spacing) * 2) 0;
+align-items: center;
+}
+
+.story-block__text {
+flex: 2; /* Ocupa mais espaço quando em linha */
+}
+
+.story-block__media {
+flex: 1; /* Ocupa menos espaço */
+text-align: center;
+}
+
+figure.story-block__media {
+margin: 0;
+}
+
+.story-block__media figcaption {
+font-size: 0.9rem;
+font-style: italic;
+color: #666;
+margin-top: 0.5rem;
+padding: 0 1rem;
+font-family: var(--font-heading);
+}
+
+/* Banners de Destaque */
+.revelation-banner {
+background-color: var(--color-dark);
+color: var(--color-white);
+}
+
+.medical-warning-banner {
+background-color: #fff0f0; /* Um vermelho bem claro para alerta */
+}
+.medical-warning-banner .subtitle {
+color: var(--color-dark);
+}
+
+
+/* Footer */
+.main-footer {
+background: var(--color-dark);
+color: var(--color-light);
+text-align: center;
+padding: var(--spacing);
+font-size: 0.9rem;
+}
+.main-footer a {
+color: var(--color-white);
+}
+.main-footer p {
+margin: 0.5rem 0;
+}
+
+/* ---------------------------------- */
+/* 3. RESPONSIVIDADE PARA TELAS MAIORES */
+/* ---------------------------------- */
+
+@media (min-width: 768px) {
+/* Regras para tablets e desktops */
+body {
+font-size: 20px;
+}
+
+.story-block {
+flex-direction: row; /* Layout lado a lado */
+text-align: left;
+}
+
+.story-block.reverse {
+flex-direction: row-reverse; /* Inverte a ordem da imagem e texto */
+}
+
+.story-block__media figcaption {
+padding: 0;
+}
+}
