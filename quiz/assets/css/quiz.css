@@ -328,3 +328,24 @@ footer ul {
         margin-bottom: 20px;
     }
 }
+/* ========================================================= */
+/* --- CORREÇÃO FINAL PARA INDICADOR DE PROGRESSO --- */
+/* Garante que o indicador de desktop fique escondido no celular */
+/* ========================================================= */
+
+.desktop-progress {
+    display: none;
+}
+.mobile-progress {
+    display: block;
+}
+
+/* Em telas maiores, inverte a visibilidade como deve ser */
+@media (min-width: 768px) {
+    .desktop-progress {
+        display: block;
+    }
+    .mobile-progress {
+        display: none;
+    }
+}
